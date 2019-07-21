@@ -9,18 +9,16 @@ var docker = require('./lib/docker.js');
 
 var app = express();
 
-var context = process.env.DS_CONTEXT || os.homedir();
-var port = parseInt(process.env.DS_PORT) || 1717;
-var token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
-
 var low_burst = throttle({ 'burst': 1, 'period': '1s' });
 var mid_burst = throttle({ 'burst': 3, 'period': '1s' });
 var high_burst = throttle({ 'burst': 5, 'period': '1s' });
 
-token = 'Basic ' + (Buffer.from && Buffer.from(token) || new Buffer(token)).toString('base64');
+var context = process.env.DS_CONTEXT || os.homedir();
+var port = parseInt(process.env.DS_PORT) || 1717;
+var token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
+token = 'Basic ' + (Buffer.from && Buffer.from(token) || new Buffer(token)).toString('base64');
 
 app.use(function (req, res, next) {
 	if (req.get('Authorization') === token) {
@@ -29,6 +27,9 @@ app.use(function (req, res, next) {
 		res.sendStatus(401);
 	}
 });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.get('/', high_burst, docker.ps);
 
