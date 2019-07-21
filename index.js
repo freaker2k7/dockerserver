@@ -5,11 +5,12 @@ const express = require('express');
 const throttle = require('express-throttle');
 const bodyParser = require('body-parser');
 const uuid = require('uuid/v4');
+const os = require('os');
 
 var app = express();
 var docker = new dockerCLI.Docker();
 
-const context = process.env.DS_CONTEXT || '/home/ubuntu';
+const context = process.env.DS_CONTEXT || os.homedir();
 const port = parseInt(process.env.DS_PORT) || 1717;
 const token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
 
@@ -44,7 +45,7 @@ app.get('/:id', throttle({ 'burst': 5, 'period': '1s' }), function(req, res) {
 	}).catch(handle_error(req, res));
 });
 
-app.put('/', throttle({ 'burst': 1, 'period': '30s' }), function(req, res) {
+app.put('/', throttle({ 'burst': 1, 'period': '1s' }), function(req, res) {
 	console.log(req.body);
 	if (!req.body || !req.body.image) {
 		return res.status(400)
