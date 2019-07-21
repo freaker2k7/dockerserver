@@ -1,1 +1,6 @@
 theme: jekyll-theme-slate
+plugins:
+  - jekyll-minifier
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
