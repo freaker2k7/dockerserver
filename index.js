@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
 	if (req.get('Authorization') === token) {
 		next();
 	} else {
-		res.status(401).send();
+		res.sendStatus(401);
 	}
 });
 
