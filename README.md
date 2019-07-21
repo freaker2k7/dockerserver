@@ -37,7 +37,8 @@ Now, you can do "remote" docker operation using simple HTTP requests:
 1. GET / - List all the containers (docker ps -a)
 2. GET /:id - Show the logs of a specific container (docker logs :id)
 3. PUT / - Run a container (docker run...)
-4. DELETE /:id - Delete a container with such a name or an ID (docker rm -f :id)
+4. POST /:id - Execute a command in a container (docker exec...)
+5. DELETE /:id - Delete a container with such a name or an ID (docker rm -f :id)
 
 ### Options
 #### Environment

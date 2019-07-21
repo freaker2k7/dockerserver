@@ -6,13 +6,17 @@ var bodyParser = require('body-parser');
 var uuid = require('uuid/v4');
 var os = require('os');
 
-var actions = require('./lib/actions.js');
+var docker = require('./lib/docker.js');
 
 var app = express();
 
 var context = process.env.DS_CONTEXT || os.homedir();
 var port = parseInt(process.env.DS_PORT) || 1717;
 var token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
+
+var low_burst = throttle({ 'burst': 1, 'period': '1s' });
+var mid_burst = throttle({ 'burst': 3, 'period': '1s' });
+var high_burst = throttle({ 'burst': 5, 'period': '1s' });
 
 token = 'Basic ' + (Buffer.from && Buffer.from(token) || new Buffer(token)).toString('base64');
 
@@ -27,17 +31,19 @@ app.use(function (req, res, next) {
 	}
 });
 
-app.get('/', throttle({ 'burst': 5, 'period': '1s' }), actions.ps);
+app.get('/', high_burst, docker.ps);
 
-app.get('/:id', throttle({ 'burst': 5, 'period': '1s' }), actions.logs);
+app.get('/:id', high_burst, docker.logs);
 
-app.put('/', throttle({ 'burst': 1, 'period': '1s' }), actions.run);
+app.put('/', low_burst, docker.run);
 
-app.delete('/:id', throttle({ 'burst': 3, 'period': '1s' }), actions.rm);
+app.post('/:id', low_burst, docker.exec);
+
+app.delete('/:id', mid_burst, docker.rm);
 
 app.listen(port);
 
 console.log('Serving on http://localhost:' + port);
 
 
-module.exports = Object.assign(actions, {'_app': app});
+module.exports = Object.assign(docker, {'_app': app});
