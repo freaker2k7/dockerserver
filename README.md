@@ -1,5 +1,9 @@
 # DockerServer
-Simple REST server for running docker containers on a remote machine.
+Simple REST server for running [docker](https://dockerserver.doorzz.com/ "docker") containers on a remote machine.
+
+<a href="http://dockerserver.doorzz.com/" title="DockerServer Logo">
+	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
+</a>
 
 ## Install
 `npm i -g docker-server`
