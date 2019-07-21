@@ -1,9 +1,22 @@
 {
 	"name": "docker-server",
 	"author": "Evgeny Kolyakov <cto@doorzz.com>",
-	"description": "DockerServer - Simple REST server for running docker images from remote machine.",
-	"version": "1.0.0",
+	"description": "DockerServer - Simple REST server for running docker containers on a remote machine.",
+	"version": "1.0.7",
+	"homepage": "http://dockerserver.doorzz.com",
+	"repository": "freaker2k7/dockerserver",
 	"license": "Apache-2.0",
+	"keywords": [
+		"docker",
+		"server",
+		"micro",
+		"service",
+		"rest",
+		"restful",
+		"http",
+		"pm2",
+		"api"
+	],
 	"bin": {
 		"docker-server": "./index.js"
 	},
@@ -12,7 +25,12 @@
 		"express": "^4.17.1",
 		"express-throttle": "^2.0.0",
 		"lodash": "^4.17.15",
-		"redis": "^2.8.0",
 		"uuid": "^3.3.2"
-	}
+	},
+	"files": [
+		"LICENSE",
+		"README.md",
+		"index.js",
+		"pm2.config.js"
+	]
 }

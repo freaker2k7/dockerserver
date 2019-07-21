@@ -1,8 +1,8 @@
 # DockerServer
-Simple REST server for running docker images from remote machine.
+Simple REST server for running docker containers on a remote machine.
 
 ## Install
-`npm install -g git+https://github.com/freaker2k7/dockerserver`
+`npm i -g docker-server`
 
 ## Background
 I needed to run a couple of containers on a remote machine and came to these conclusions:
@@ -31,7 +31,7 @@ and if you want in addition to start it on startup just run:<br>
 Now, you can do "remote" docker operation using simple HTTP requests:
 
 1. GET / - List all the containers (docker ps -a)
-2. GET /:id - Show the logs of a specific (docker logs :id)
+2. GET /:id - Show the logs of a specific container (docker logs :id)
 3. PUT / - Run a container (docker run...)
 4. DELETE /:id - Delete a container with such a name or an ID (docker rm -f :id)
 

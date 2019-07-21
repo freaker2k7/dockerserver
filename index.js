@@ -77,7 +77,7 @@ app.put('/', throttle({ 'burst': 1, 'period': '30s' }), function(req, res) {
 	}
 	
 	docker.command('run --name ' + (req.body.name || uuid()) + ports + volumes + remove + detach + ' ' + req.body.image + data).then(function(data) {
-		console.debug('PUT:', data);
+		// console.debug('PUT:', data);
 		res.json(data);
 	}).catch(handle_error(req, res));
 });
@@ -88,7 +88,7 @@ app.delete('/:id', throttle({ 'burst': 3, 'period': '1s' }), function(req, res) 
 	}
 	
 	docker.command('rm -f ' + req.params.id).then(function(data) {
-		console.debug('DELETE (RM):', data);
+		// console.debug('DELETE (RM):', data);
 		res.json(data);
 	}).catch(handle_error(req, res));
 });
