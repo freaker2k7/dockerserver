@@ -2,7 +2,6 @@
 
 var express = require('express');
 var throttle = require('express-throttle');
-var bodyParser = require('body-parser');
 var uuid = require('uuid/v4');
 var os = require('os');
 
@@ -20,8 +19,8 @@ var high_burst = throttle({ 'burst': 5, 'period': '1s' });
 
 token = 'Basic ' + (Buffer.from && Buffer.from(token) || new Buffer(token)).toString('base64');
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
 	if (req.get('Authorization') === token) {
