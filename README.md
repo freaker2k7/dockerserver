@@ -1,7 +1,7 @@
 # DockerServer
 Simple REST server for running [docker](https://dockerserver.doorzz.com/ "docker") containers on a remote machine.
 
-<a href="http://dockerserver.doorzz.com/" title="DockerServer Logo">
+<a href="https://dockerserver.doorzz.com/" title="DockerServer Logo">
 	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
 </a>
 
