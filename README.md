@@ -48,7 +48,7 @@ You can set the following environment variables to configure DockerServer:
 2. `DS_PORT` - The port on which the DockerServer is running (default: 1717)
 3. `DS_TOKEN` - The secret token for the authorization (default: xxxxxxxxxxxxxxxxxxxxxxxx)
 
-#### PUT Data
+#### POST/PUT Data
 When sending the PUT request, the following parameters are supported:
 
 1. image - The image for the run (**required**) (default: null)
