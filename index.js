@@ -1,18 +1,20 @@
 #!/usr/bin/env node
 
-const dockerCLI = require('docker-cli-js');
-const express = require('express');
-const throttle = require('express-throttle');
-const bodyParser = require('body-parser');
-const uuid = require('uuid/v4');
-const os = require('os');
+var dockerCLI = require('docker-cli-js');
+var express = require('express');
+var throttle = require('express-throttle');
+var bodyParser = require('body-parser');
+var uuid = require('uuid/v4');
+var os = require('os');
 
 var app = express();
 var docker = new dockerCLI.Docker();
 
-const context = process.env.DS_CONTEXT || os.homedir();
-const port = parseInt(process.env.DS_PORT) || 1717;
-const token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
+var context = process.env.DS_CONTEXT || os.homedir();
+var port = parseInt(process.env.DS_PORT) || 1717;
+var token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
+
+token = (Buffer.from && Buffer.from(token) || new Buffer(token)).toString('base64');
 
 var handle_error = function(req, res) {
 	return function(err) {
@@ -24,7 +26,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.use(function (req, res, next) {
-	if (Buffer.from((req.get('Authorization') || '').replace(/^Basic */, ''), 'base64').toString() === token) {
+	if (req.get('Authorization') === token) {
 		next();
 	} else {
 		res.status(401).send();
@@ -48,22 +50,22 @@ app.get('/:id', throttle({ 'burst': 5, 'period': '1s' }), function(req, res) {
 app.put('/', throttle({ 'burst': 1, 'period': '1s' }), function(req, res) {
 	console.log(req.body);
 	if (!req.body || !req.body.image) {
-		return res.status(400)
+		return res.status(400).send();
 	}
 	
-	let ports = '';
-	let volumes = '';
-	let data = '';
-	let detach = '';
-	let remove = '';
+	var ports = '';
+	var volumes = '';
+	var data = '';
+	var detach = '';
+	var remove = '';
 	
 	if (req.body.ports) {
-		for (let k in req.body.ports) {
+		for (var k in req.body.ports) {
 			ports += ' -p ' + k + ':' + req.body.ports[k];
 		}
 	}
 	if (req.body.volumes) {
-		for (let k in req.body.volumes) {
+		for (var k in req.body.volumes) {
 			volumes += ' -v ' + k.replace(/^\.$/, context) + ':' + req.body.volumes[k];
 		}
 	}
@@ -85,7 +87,7 @@ app.put('/', throttle({ 'burst': 1, 'period': '1s' }), function(req, res) {
 
 app.delete('/:id', throttle({ 'burst': 3, 'period': '1s' }), function(req, res) {
 	if (!req.params.id) {
-		return res.status(400)
+		return res.status(400).send();
 	}
 	
 	docker.command('rm -f ' + req.params.id).then(function(data) {
