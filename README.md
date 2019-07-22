@@ -1,7 +1,7 @@
 # DockerServer
-Simple REST server for running [docker](https://dockerserver.doorzz.com/ "docker") containers on a remote machine.
+Simple REST server for running [docker](https://docker.com/ "docker") containers on a remote machine.
 
-<a href="https://dockerserver.doorzz.com/" title="DockerServer Logo">
+<a href="https://dockerserver.io/" title="DockerServer Logo">
 	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
 </a>
 
@@ -55,7 +55,7 @@ When sending the PUT request, the following parameters are supported:
 2. name - The name of the container (default: uuid4())
 3. remove - Flag to remove the container when it finishes `--rm` (default: false).
 4. detach - Flag to detach the container `-d` (default: false).
-5. ports - **Map** of ports to promote (default: null)
+5. ports - **Map** of ports to publish (default: null)
 6. volumes - **Map** of volumes to mount (default: null)
 7. data - CMD to run inside the container (default: null)
 
