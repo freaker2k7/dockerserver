@@ -2,7 +2,7 @@
 	"name": "docker-server",
 	"author": "Evgeny Kolyakov <cto@doorzz.com>",
 	"description": "DockerServer - Simple REST server for running docker containers on a remote machine.",
-	"version": "1.2.5",
+	"version": "1.2.7",
 	"homepage": "http://dockerserver.doorzz.com",
 	"repository": "freaker2k7/dockerserver",
 	"license": "Apache-2.0",
@@ -23,7 +23,7 @@
 	"dependencies": {
 		"docker-cli-js": "^2.5.2",
 		"express": "^4.17.1",
-		"express-throttle": "^2.0.0",
+		"express-rate-limit": "^5.0.0",
 		"lodash": "^4.17.15",
 		"uuid": "^3.3.2"
 	},

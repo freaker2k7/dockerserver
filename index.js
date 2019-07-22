@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var express = require('express');
-var throttle = require('express-throttle');
+var throttle = require('express-rate-limit');
 var uuid = require('uuid/v4');
 var os = require('os');
 
@@ -9,9 +9,9 @@ var docker = require('./lib/docker.js');
 
 var app = express();
 
-var low_burst = throttle({ 'burst': 1, 'period': '1s' });
-var mid_burst = throttle({ 'burst': 3, 'period': '1s' });
-var high_burst = throttle({ 'burst': 5, 'period': '1s' });
+var low_burst = throttle({ 'max': 60, 'windowMs': 60000 });
+var mid_burst = throttle({ 'max': 180, 'windowMs': 60000 });
+var high_burst = throttle({ 'max': 300, 'windowMs': 60000 });
 
 var context = process.env.DS_CONTEXT || os.homedir();
 var port = parseInt(process.env.DS_PORT) || 1717;
