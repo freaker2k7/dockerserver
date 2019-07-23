@@ -1,7 +1,7 @@
 # DockerServer
 Simple REST server for running [docker](https://docker.com/ "docker") containers on a remote machine.
 
-<a href="https://dockerserver.io/" title="DockerServer Logo">
+<a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
 	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
 </a>
 
