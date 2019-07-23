@@ -6,7 +6,9 @@ Simple REST server for running [docker](https://docker.com/ "docker") containers
 </a>
 
 ## Install
-`npm i -g docker-server`
+`npm i -g docker-server`<br>
+or<br>
+`docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock -e "DS_TOKEN=my_secret_token" evgy/dockerserver`
 
 ## Background
 I needed to run a couple of containers on a remote machine and came to these conclusions:
@@ -30,7 +32,9 @@ DockerServer can be run for a single session with:<br>
 or as a service using [PM2](https://pm2.keymetrics.io/ "PM2"):<br>
 `$ pm2 start /usr/lib/node_modules/docker-server/pm2.config.js`<br>
 and if you want in addition to start it on startup just run:<br>
-`$ pm2 startup`
+`$ pm2 startup`<br>
+And of-course, as mentioned before, via docker itself:<br>
+`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock -e "DS_TOKEN=my_secret_token" evgy/dockerserver`
 
 Now, you can do "remote" docker operation using simple HTTP requests:
 
@@ -75,5 +79,5 @@ and/or<br>
 and/or<br>
 `$ curl -X DELETE http://1.2.3.4:1717/v-redis -H 'Authorization: Basic base64EncodedToken'`
 
-### License
+## License
 APACHE-2.0 (see the LICENSE files in the repository).

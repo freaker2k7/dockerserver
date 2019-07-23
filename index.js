@@ -2,7 +2,6 @@
 
 var express = require('express');
 var throttle = require('express-rate-limit');
-var uuid = require('uuid/v4');
 var os = require('os');
 
 var docker = require('./lib/docker.js');
