@@ -19,10 +19,13 @@ I needed to run a couple of containers on a remote machine and came to these con
 ## Approach
 Built a small REST server with NodeJS, using the `express` and `docker-cli-js` packages as a base.
 
-## Design Principles
+### Design Principles
 * Docker is (a) present.
 * Keep the business logic simple!
 * It must be stateless!
+
+### Current architecture
+<img alt="How things work today" src="https://i.imgur.com/S45VhXe.png" />
 
 ## Usage
 Install DockerServer on the machine that you want to run your containers.
@@ -48,7 +51,7 @@ Now, you can do "remote" docker operation using simple HTTP requests:
 #### Environment
 You can set the following environment variables to configure DockerServer:
 
-1. `DS_CONTEXT` - The base context directory (default: /home/ubuntu)
+1. `DS_CONTEXT` - The base context directory (default: $HOME)
 2. `DS_PORT` - The port on which the DockerServer is running (default: 1717)
 3. `DS_TOKEN` - The secret token for the authorization (default: xxxxxxxxxxxxxxxxxxxxxxxx)
 
@@ -78,6 +81,10 @@ and/or<br>
 `$ curl -X DELETE http://1.2.3.4:1717/p-redis -H 'Authorization: Basic base64EncodedToken'`<br>
 and/or<br>
 `$ curl -X DELETE http://1.2.3.4:1717/v-redis -H 'Authorization: Basic base64EncodedToken'`
+
+## Roadmap
+* Design cluster mode
+* Support HTTPS
 
 ## License
 APACHE-2.0 (see the LICENSE files in the repository).
