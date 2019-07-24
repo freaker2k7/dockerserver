@@ -83,8 +83,9 @@ and/or<br>
 `$ curl -X DELETE http://1.2.3.4:1717/v-redis -H 'Authorization: Basic base64EncodedToken'`
 
 ## Roadmap
-* Design cluster mode
 * Support HTTPS
+* Queue (for heavy loads)
+* Design cluster mode + Load balancing
 
 ## License
 APACHE-2.0 (see the LICENSE files in the repository).
