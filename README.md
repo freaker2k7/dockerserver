@@ -1,6 +1,10 @@
 # DockerServer
 Super lightweight & simple REST server for running [docker](https://docker.com/ "docker") containers on a remote machine.
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
+<br>
+
 <a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
 	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
 </a>
