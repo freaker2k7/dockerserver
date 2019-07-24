@@ -14,8 +14,8 @@ var high_burst = throttle({ 'max': 300, 'windowMs': 60000 });
 var port = parseInt(process.env.DS_PORT) || 1717;
 var token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
 
-
 token = 'Basic ' + (Buffer.from && Buffer.from(token) || new Buffer(token)).toString('base64');
+
 
 app.use(function (req, res, next) {
 	if (req.get('Authorization') === token) {
