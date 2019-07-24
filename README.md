@@ -48,6 +48,7 @@ Now, you can do "remote" docker operation using simple HTTP requests:
 5. DELETE /:id - Delete a container with such a name or an ID (docker rm -f :id)
 
 ### Options
+
 #### Environment
 You can set the following environment variables to configure DockerServer:
 
