@@ -1,6 +1,8 @@
 # DockerServer
 Super lightweight & simple REST server for running [docker](https://docker.com/ "docker") containers on a remote machine.
 
+[![npm version](https://badge.fury.io/js/docker-server.svg)](https://badge.fury.io/js/docker-server)
+[![npm downloads](https://img.shields.io/npm/dm/docker-server.svg)](https://www.npmjs.com/package/docker-server)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
 <br>
