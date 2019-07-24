@@ -51,9 +51,8 @@ Now, you can do "remote" docker operation using simple HTTP requests:
 #### Environment
 You can set the following environment variables to configure DockerServer:
 
-1. `DS_CONTEXT` - The base context directory (default: $HOME)
-2. `DS_PORT` - The port on which the DockerServer is running (default: 1717)
-3. `DS_TOKEN` - The secret token for the authorization (default: xxxxxxxxxxxxxxxxxxxxxxxx)
+1. `DS_PORT` - The port on which the DockerServer is running (default: 1717)
+2. `DS_TOKEN` - The secret token for the authorization (default: xxxxxxxxxxxxxxxxxxxxxxxx)
 
 #### POST/PUT Data
 When sending the PUT request, the following parameters are supported:

@@ -2,7 +2,6 @@
 
 var express = require('express');
 var throttle = require('express-rate-limit');
-var os = require('os');
 
 var docker = require('./lib/docker.js');
 
@@ -12,7 +11,6 @@ var low_burst = throttle({ 'max': 60, 'windowMs': 60000 });
 var mid_burst = throttle({ 'max': 180, 'windowMs': 60000 });
 var high_burst = throttle({ 'max': 300, 'windowMs': 60000 });
 
-var context = process.env.DS_CONTEXT || os.homedir();
 var port = parseInt(process.env.DS_PORT) || 1717;
 var token = process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx';
 
