@@ -43,14 +43,14 @@ or as a service using [PM2](https://pm2.keymetrics.io/ "PM2"):<br>
 and if you want in addition to start it on startup just run:<br>
 `$ pm2 startup`<br>
 And of-course, as mentioned before, but using params, via docker itself:<br>
-`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock evgy/dockerserver --token my_secret_token`<br>
+`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock evgy/dockerserver docker-server --token my_secret_token`<br>
 Or you can run in HTTPS mode:<br>
 (Note that in this example I'm using [Let's Encrypt](https://letsencrypt.org/ "Let's Encrypt") and I'm using `readlink` because these files are symbolic links)<br>
 `$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock 
 -v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/cert.pem):/certs/cert.pem:ro 
 -v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/chain.pem):/certs/chain.pem:ro 
 -v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/privkey.pem):/certs/privkey.pem:ro 
-evgy/dockerserver --token my_secret_token --https`
+evgy/dockerserver docker-server --token my_secret_token --https`
 
 Now, you can do "remote" docker operation using simple HTTP requests:
 

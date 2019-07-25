@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var express = require('express');
 var throttle = require('express-rate-limit');
 
