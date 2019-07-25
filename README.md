@@ -42,8 +42,15 @@ or as a service using [PM2](https://pm2.keymetrics.io/ "PM2"):<br>
 `$ pm2 start /usr/lib/node_modules/docker-server/pm2.config.js`<br>
 and if you want in addition to start it on startup just run:<br>
 `$ pm2 startup`<br>
-And of-course, as mentioned before, via docker itself:<br>
-`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock -e "DS_TOKEN=my_secret_token" evgy/dockerserver`
+And of-course, as mentioned before, but using params, via docker itself:<br>
+`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock evgy/dockerserver --token my_secret_token`<br>
+Or you can run in HTTPS mode:<br>
+(Note that in this example I'm using [Let's Encrypt](https://letsencrypt.org/ "Let's Encrypt") and I'm using `readlink` because these files are symbolic links)<br>
+`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock 
+-v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/cert.pem):/certs/cert.pem:ro 
+-v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/chain.pem):/certs/chain.pem:ro 
+-v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/privkey.pem):/certs/privkey.pem:ro 
+evgy/dockerserver --token my_secret_token --https`
 
 Now, you can do "remote" docker operation using simple HTTP requests:
 
@@ -54,12 +61,26 @@ Now, you can do "remote" docker operation using simple HTTP requests:
 5. DELETE /:id - Delete a container with such a name or an ID (docker rm -f :id)
 
 ### Options
-
 #### Environment
 You can set the following environment variables to configure DockerServer:
 
 1. `DS_PORT` - The port on which the DockerServer is running (default: 1717)
 2. `DS_TOKEN` - The secret token for the authorization (default: xxxxxxxxxxxxxxxxxxxxxxxx)
+
+#### Parameters
+Also, you can start DockerServerwith these parameters:
+
+1. `--port [num]` - Same as `DS_PORT`
+2. `--token [string]` - Same as `DS_TOKEN`
+3. `--low_burst [num]` - Max number of requests per minute for Low burst
+4. `--mid_burst [num]` - Max number of requests per minute for Mid burst
+5. `--high_burst [num]` - Max number of requests per minute for High burst
+6. `--info` - Show help.
+7. `--https` - Enable HTTPS mode. For this you must have the following files:
+	a. /certs/cert.pem
+	b. /certs/privkey.pem
+	c. /certs/chain.pem (optional, to support self-signed certs)
+
 
 #### POST/PUT Data
 When sending the PUT request, the following parameters are supported:
@@ -88,8 +109,22 @@ and/or<br>
 and/or<br>
 `$ curl -X DELETE http://1.2.3.4:1717/v-redis -H 'Authorization: Basic base64EncodedToken'`
 
+
+## Changelog
+
+1.4.2 - Added HTTPS support & parametrized all env. variables.
+
+1.4.1 - Removed unused DS_CONTEXT env. variable & received JS code quality A+ score on [LGTM](https://lgtm.com "LGTM").
+
+1.2.9 - Fixed some typos.
+
+1.2.7 - Replaced express-throttle with express-rate-limit.
+
+1.2.5 - Stable, simple express server with express-throttle.
+
+1.0 - Release, woohoo!!
+
 ## Roadmap
-* Support HTTPS
 * Queue (for heavy loads)
 * Design cluster mode + Load balancing
 
