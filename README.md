@@ -47,9 +47,9 @@ And of-course, as mentioned before, but using params, via docker itself:<br>
 Or you can run in HTTPS mode:<br>
 (Note that in this example I'm using [Let's Encrypt](https://letsencrypt.org/ "Let's Encrypt") and I'm using `readlink` because these files are symbolic links)<br>
 `$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock 
--v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/cert.pem):/certs/cert.pem:ro 
--v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/chain.pem):/certs/chain.pem:ro 
--v $(readlink -f /home/user/letsencrypt/config/live/your_domain.com/privkey.pem):/certs/privkey.pem:ro 
+-v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/cert.pem):/certs/cert.pem:ro 
+-v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/chain.pem):/certs/chain.pem:ro 
+-v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/privkey.pem):/certs/privkey.pem:ro 
 evgy/dockerserver docker-server --token my_secret_token --https`
 
 Now, you can do "remote" docker operation using simple HTTP requests:
@@ -111,6 +111,8 @@ and/or<br>
 
 
 ## Changelog
+
+1.5.0 - Stable HTTPS support.
 
 1.4.4 - Fixed some typos.
 
