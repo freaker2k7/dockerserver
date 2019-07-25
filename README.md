@@ -112,6 +112,8 @@ and/or<br>
 
 ## Changelog
 
+1.5.5 - Back to express-rate-limit && set min version to NodeJS 6.0.
+
 1.5.4 - Returning to express-throttle for compatibitily (testing).
 
 1.5.2 - Fixed typo in filename.

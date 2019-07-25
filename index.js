@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var express = require('express');
-var throttle = require('express-throttle');
+var throttle = require('express-rate-limit');
 
 var docker = require('./lib/docker.js');
 var network = require('./lib/network.js')
@@ -19,9 +19,9 @@ var args = require('yargs')
 
 var app = express();
 
-var low_burst = throttle({ 'burst': args.low_burst, 'period': '60s' });
-var mid_burst = throttle({ 'burst': args.mid_burst, 'period': '60s' });
-var high_burst = throttle({ 'burst': args.high_burst, 'period': '60s' });
+var low_burst = throttle({ 'max': args.low_burst, 'windowMs': 60000 });
+var mid_burst = throttle({ 'max': args.mid_burst, 'windowMs': 60000 });
+var high_burst = throttle({ 'max': args.high_burst, 'windowMs': 60000 });
 
 // Encode the token only once!
 var token = 'Basic ' + (Buffer.from && Buffer.from(args.token) || new Buffer(args.token)).toString('base64');
