@@ -2,7 +2,7 @@ module.exports = {
 	"apps": [{
 		"id": "docker-server-" + ((Math.random() * 100000) % 1000),
 		"name": "docker-server",
-		"script": "node index.js",
+		"script": "index.js",
 		"args": ["--trace-warnings"],
 		"cwd": "/usr/lib/node_modules/docker-server",
 		"watch": true,

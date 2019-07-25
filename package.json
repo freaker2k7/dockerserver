@@ -2,7 +2,7 @@
 	"name": "docker-server",
 	"author": "Evgeny Kolyakov <thenetfreaker@gmail.com>",
 	"description": "DockerServer - Super lightweight & simple REST server for running docker containers on a remote machine.",
-	"version": "1.4.9",
+	"version": "1.5.0",
 	"homepage": "https://dockerserver.io",
 	"repository": "freaker2k7/dockerserver",
 	"license": "Apache-2.0",
@@ -18,7 +18,7 @@
 		"api"
 	],
 	"bin": {
-		"docker-server": "node ./index.js"
+		"docker-server": "./index.js"
 	},
 	"dependencies": {
 		"docker-cli-js": "^2.5.2",
