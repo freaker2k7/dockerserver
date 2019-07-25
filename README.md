@@ -112,11 +112,13 @@ and/or<br>
 
 ## Changelog
 
+1.5.2 - Fixed typo in filename.
+
 1.5.1 - Added test for [AppVeyor](https://appveyor.com/ "AppVeyor").
 
 1.5.0 - Stable HTTPS support.
 
-1.4.4 - Fixed some typos.
+1.4.4-1.4.9 - Fixed some typos.
 
 1.4.2 - Added HTTPS support & parametrized all env. variables.
 
