@@ -2,7 +2,7 @@
 	"name": "docker-server",
 	"author": "Evgeny Kolyakov <thenetfreaker@gmail.com>",
 	"description": "DockerServer - Super lightweight & simple REST server for running docker containers on a remote machine.",
-	"version": "1.4.5",
+	"version": "1.4.7",
 	"homepage": "https://dockerserver.io",
 	"repository": "freaker2k7/dockerserver",
 	"license": "Apache-2.0",

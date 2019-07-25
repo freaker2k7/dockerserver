@@ -43,7 +43,7 @@ app.delete('/:id', mid_burst, docker.rm);
 
 // Main listener
 network.protocol(app, args.https).listen(args.port);
-console.log('Serving on http://localhost:' + args.port);
+console.log('Serving on http' + (args.https && 's' || '') + '://0.0.0.0:' + args.port);
 
 
 module.exports = Object.assign(docker, network, {'_app': app});
