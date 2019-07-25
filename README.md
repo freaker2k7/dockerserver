@@ -112,6 +112,8 @@ and/or<br>
 
 ## Changelog
 
+1.5.4 - Returning to express-throttle for compatibitily (testing).
+
 1.5.2 - Fixed typo in filename.
 
 1.5.1 - Added test for [AppVeyor](https://appveyor.com/ "AppVeyor").
