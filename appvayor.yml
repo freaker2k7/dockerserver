@@ -1,0 +1,37 @@
+environment:
+  matrix:
+    - nodejs_version: "0.10"
+    - nodejs_version: "0.12"
+    - nodejs_version: "1.8"
+    - nodejs_version: "2.5"
+    - nodejs_version: "3.3"
+    - nodejs_version: "4.9"
+    - nodejs_version: "5.12"
+    - nodejs_version: "6.17"
+    - nodejs_version: "7.10"
+    - nodejs_version: "8.16"
+    - nodejs_version: "9.11"
+    - nodejs_version: "10.15"
+    - nodejs_version: "11.15"
+    - nodejs_version: "12.3"
+
+cache:
+  - node_modules
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm test
+
+# Don't actually build.
+build: off

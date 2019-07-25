@@ -12,7 +12,8 @@ var args = require('yargs')
 	.option('low_burst', {describe: 'Max number of requests per minute for Low burst', type: 'number', default: 60})
 	.option('mid_burst', {describe: 'Max number of requests per minute for Mid burst', type: 'number', default: 180})
 	.option('high_burst', {describe: 'Max number of requests per minute for High burst', type: 'number', default: 300})
-	.option('https', {describe: 'Flag to turn on the HTTPS mode [See docs., https://github.com/freaker2k7/dockerserver]', type: 'boolean', default: false})
+	.option('https', {describe: 'Flag to turn on the HTTPS mode [See https://github.com/freaker2k7/dockerserver]', type: 'boolean', default: false})
+	.option('test', {describe: 'Flag for testing sctipt [See https://github.com/freaker2k7/dockerserver/blob/master/package.json]', type: 'boolean', default: false})
 	.help('info')
 	.argv;
 
@@ -47,5 +48,8 @@ app.delete('/:id', mid_burst, docker.rm);
 network.protocol(app, args.https).listen(args.port);
 console.log('Serving on http' + (args.https && 's' || '') + '://0.0.0.0:' + args.port);
 
+if (args.test) {
+	process.exit(0);
+}
 
 module.exports = Object.assign(docker, network, {'_app': app});

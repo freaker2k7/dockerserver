@@ -112,6 +112,8 @@ and/or<br>
 
 ## Changelog
 
+1.5.1 - Added test for [AppVeyor](https://appveyor.com/ "AppVeyor").
+
 1.5.0 - Stable HTTPS support.
 
 1.4.4 - Fixed some typos.
