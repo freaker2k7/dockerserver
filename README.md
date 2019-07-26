@@ -9,9 +9,11 @@ Super lightweight & simple RESTFul distributed server for running [docker](https
 [![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
-<a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
-	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
-</a>
+<center>
+  <a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
+    <img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
+  </a>
+</center>
 
 ## Install
 `npm i -g docker-server`<br>
@@ -33,7 +35,30 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 * It must be stateless!
 
 ### Current architecture
-<img alt="How things work today" src="https://i.imgur.com/S45VhXe.png" />
+<center>
+  <img alt="How things work today" src="https://i.imgur.com/5T9UUn2.png" /><br>
+  <sub><i>The cluster diagram demonstrates a PUT request.</i></sub>
+</center>
+
+
+#### Notes for the Cluster Mode:
+
+  *\*0 - Connection between the load balancer and the docker-server.*<br>
+
+  *\*1 - Save the machime load to a Redis server and exprire that record after a minute.*
+
+
+  **PUT method**<br>
+
+  *1 - Requests comes to any free (according to the load balancer) node to answer.*<br>
+
+  *2 - Get the most free (according to actual cpu-mem ratio) node.*<br>
+
+  *3 - Resend the current request to that node (or process if it's the current node) and return the answer.*<br>
+
+
+  **For the rest of the methods**<br>
+  *Resent the current request to all the nodes and return the merged results.*
 
 ## Usage
 Install DockerServer on the machine that you want to run your containers.
@@ -80,9 +105,9 @@ Also, you can start DockerServerwith these parameters:
 6. `--info` - Show help.
 7. `--https` - Enable **HTTPS** mode (default: false)
 	For this you must have the following files:
-		a. /certs/cert.pem
-		b. /certs/privkey.pem
-		c. /certs/chain.pem (optional, to support self-signed certs)
+	a. /certs/cert.pem
+	b. /certs/privkey.pem
+	c. /certs/chain.pem (optional, to support self-signed certs)
 8. `--db-host` - (Redis) Database host address  (default: localhost)
 9. `--db-port` - (Redis) Database port (default: 6379)
 
@@ -117,7 +142,7 @@ and/or<br>
 
 ## Changelog
 
-1.5.8 - Cluster mode support (Only some issues with POST to /:id).
+1.5.8 - Cluster mode support (Only some issues with POST to /:id) with [Redis]("https://redis.io" "Redis").
 
 1.5.7 - Badges :)
 
