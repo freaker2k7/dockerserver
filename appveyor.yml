@@ -37,4 +37,3 @@ build: off
 matrix:
   allow_failures:
     - nodejs_version: "12.3"
-      platform: x86
