@@ -6,6 +6,7 @@ Super lightweight & simple REST server for running [docker](https://docker.com/ 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
+[![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 <br>
 
 <a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
@@ -112,6 +113,8 @@ and/or<br>
 
 
 ## Changelog
+
+1.5.7 - Badges :)
 
 1.5.5 - Back to express-rate-limit && set min version to NodeJS 6.0.
 
