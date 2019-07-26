@@ -147,7 +147,6 @@ and/or<br>
 
 ## Roadmap
 * Queue (for heavy loads)
-* Design cluster mode + CPU load balancing
 * Autoscaling
 
 ## License
