@@ -46,7 +46,7 @@ and if you want in addition to start it on startup just run:<br>
 `$ pm2 startup`<br>
 And of-course, as mentioned before, but using params, via docker itself:<br>
 `$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock evgy/dockerserver docker-server --token my_secret_token`<br>
-Or you can run in HTTPS mode:<br>
+Or you can run in **HTTPS** mode:<br>
 (Note that in this example I'm using [Let's Encrypt](https://letsencrypt.org/ "Let's Encrypt") and I'm using `readlink` because these files are symbolic links)<br>
 `$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock 
 -v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/cert.pem):/certs/cert.pem:ro 
@@ -78,7 +78,7 @@ Also, you can start DockerServerwith these parameters:
 4. `--mid_burst [num]` - Max number of requests per minute for Mid burst
 5. `--high_burst [num]` - Max number of requests per minute for High burst
 6. `--info` - Show help.
-7. `--https` - Enable HTTPS mode. For this you must have the following files:
+7. `--https` - Enable **HTTPS** mode. For this you must have the following files:
 	a. /certs/cert.pem
 	b. /certs/privkey.pem
 	c. /certs/chain.pem (optional, to support self-signed certs)
@@ -124,7 +124,7 @@ and/or<br>
 
 1.5.1 - Added test for [AppVeyor](https://appveyor.com/ "AppVeyor").
 
-1.5.0 - Stable HTTPS support.
+**1.5.0 - Stable HTTPS support.**
 
 1.4.4-1.4.9 - Fixed some typos.
 
@@ -138,7 +138,7 @@ and/or<br>
 
 1.2.5 - Stable, simple express server with express-throttle.
 
-1.0 - Release, woohoo!!
+**1.0 - Release, woohoo!!**
 
 ## Roadmap
 * Queue (for heavy loads)
