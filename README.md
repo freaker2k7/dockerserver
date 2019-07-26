@@ -1,5 +1,5 @@
 # DockerServer
-Super lightweight & simple REST server for running [docker](https://docker.com/ "docker") containers on a remote machine.
+Super lightweight & simple RESTFul distributed server for running [docker](https://docker.com/ "docker") containers on a remote machine(s) in a secure way.
 
 [![npm version](https://badge.fury.io/js/docker-server.svg)](https://badge.fury.io/js/docker-server)
 [![npm downloads](https://img.shields.io/npm/dm/docker-server.svg)](https://www.npmjs.com/package/docker-server)
@@ -7,7 +7,7 @@ Super lightweight & simple REST server for running [docker](https://docker.com/ 
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
 [![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-<br>
+
 
 <a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
 	<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
@@ -48,7 +48,7 @@ And of-course, as mentioned before, but using params, via docker itself:<br>
 `$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock evgy/dockerserver docker-server --token my_secret_token`<br>
 Or you can run in **HTTPS** mode:<br>
 (Note that in this example I'm using [Let's Encrypt](https://letsencrypt.org/ "Let's Encrypt") and I'm using `readlink` because these files are symbolic links)<br>
-`$ docker run -d -p 1717:1717 --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock 
+`$ docker run -d -p 443:1717 --privileged --restart=always --name=docker-server -v /var/run/docker.sock:/var/run/docker.sock 
 -v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/cert.pem):/certs/cert.pem:ro 
 -v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/chain.pem):/certs/chain.pem:ro 
 -v $(readlink -f /home/user/letsencrypt/config/live/your-domain.com/privkey.pem):/certs/privkey.pem:ro 
@@ -74,14 +74,17 @@ Also, you can start DockerServerwith these parameters:
 
 1. `--port [num]` - Same as `DS_PORT`
 2. `--token [string]` - Same as `DS_TOKEN`
-3. `--low_burst [num]` - Max number of requests per minute for Low burst
-4. `--mid_burst [num]` - Max number of requests per minute for Mid burst
-5. `--high_burst [num]` - Max number of requests per minute for High burst
+3. `--low_burst [num]` - Max number of requests per minute for Low burst (default: 60)
+4. `--mid_burst [num]` - Max number of requests per minute for Mid burst (default: 180)
+5. `--high_burst [num]` - Max number of requests per minute for High burst (default: 300)
 6. `--info` - Show help.
-7. `--https` - Enable **HTTPS** mode. For this you must have the following files:
-	a. /certs/cert.pem
-	b. /certs/privkey.pem
-	c. /certs/chain.pem (optional, to support self-signed certs)
+7. `--https` - Enable **HTTPS** mode (default: false)
+	For this you must have the following files:
+		a. /certs/cert.pem
+		b. /certs/privkey.pem
+		c. /certs/chain.pem (optional, to support self-signed certs)
+8. `--db-host` - (Redis) Database host address  (default: localhost)
+9. `--db-port` - (Redis) Database port (default: 6379)
 
 
 #### POST/PUT Data
@@ -114,6 +117,8 @@ and/or<br>
 
 ## Changelog
 
+1.5.8 - Cluster mode support (Only some issues with POST to /:id).
+
 1.5.7 - Badges :)
 
 1.5.5 - Back to express-rate-limit && set min version to NodeJS 6.0.
@@ -142,7 +147,8 @@ and/or<br>
 
 ## Roadmap
 * Queue (for heavy loads)
-* Design cluster mode + Load balancing
+* Design cluster mode + CPU load balancing
+* Autoscaling
 
 ## License
 APACHE-2.0 (see the LICENSE files in the repository).

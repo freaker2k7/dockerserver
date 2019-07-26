@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 
-var express = require('express');
-var throttle = require('express-rate-limit');
+const express = require('express');
+const throttle = require('express-rate-limit');
 
-var docker = require('./lib/docker.js');
-var network = require('./lib/network.js')
+const docker = require('./lib/docker.js');
+const network = require('./lib/network.js');
 
 var args = require('yargs')
-	.option('port', {describe: 'DockerServer port', type: 'number', default: parseInt(process.env.DS_PORT) || 1717})
-	.option('token', {describe: 'Secret tocket (recommended between 1024-4096 chars)', type: 'string', default: process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx'})
-	.option('low_burst', {describe: 'Max number of requests per minute for Low burst', type: 'number', default: 60})
-	.option('mid_burst', {describe: 'Max number of requests per minute for Mid burst', type: 'number', default: 180})
-	.option('high_burst', {describe: 'Max number of requests per minute for High burst', type: 'number', default: 300})
-	.option('https', {describe: 'Flag to turn on the HTTPS mode [See https://github.com/freaker2k7/dockerserver]', type: 'boolean', default: false})
-	.option('test', {describe: 'Flag for testing sctipt [See https://github.com/freaker2k7/dockerserver/blob/master/package.json]', type: 'boolean', default: false})
-	.help('info')
+	.option('port', {describe: 'DockerServer port.', type: 'number', default: parseInt(process.env.DS_PORT) || 1717})
+	.option('token', {describe: 'Secret tocket (recommended between 1024-4096 chars).', type: 'string', default: process.env.DS_TOKEN || 'xxxxxxxxxxxxxxxxxxxxxxxx'})
+	.option('low_burst', {describe: 'Max number of requests per minute for Low burst.', type: 'number', default: 60})
+	.option('mid_burst', {describe: 'Max number of requests per minute for Mid burst.', type: 'number', default: 180})
+	.option('high_burst', {describe: 'Max number of requests per minute for High burst.', type: 'number', default: 300})
+	.option('https', {describe: 'Flag to turn on the HTTPS mode.', type: 'boolean', default: false})
+	.option('cluster', {describe: 'Flag to turn on the Cluster mode.', type: 'boolean', default: false})
+	.help('help', 'Show help.\nFor more documentation see https://github.com/freaker2k7/dockerserver')
 	.argv;
 
 var app = express();
@@ -33,6 +33,8 @@ app.use(network.check(token));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(network.balance(args.cluster, args.https, args.port));
+
 // Routes
 app.get('/', high_burst, docker.ps);
 
@@ -46,10 +48,7 @@ app.delete('/:id', mid_burst, docker.rm);
 
 // Main listener
 network.protocol(app, args.https).listen(args.port);
-console.log('Serving on http' + (args.https && 's' || '') + '://0.0.0.0:' + args.port);
+console.log('Serving on ' + network.get_protocol(args.https) + '0.0.0.0:' + args.port);
 
-if (args.test) {
-	process.exit(0);
-}
 
 module.exports = Object.assign(docker, network, {'_app': app});
