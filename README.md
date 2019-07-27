@@ -33,9 +33,9 @@ I needed to run a couple of containers on a remote machine and came to these con
 Built a small REST server with NodeJS, using the `express` and `docker-cli-js` packages as a base.
 
 ### Design Principles
-* Docker is (a) present.
-* Keep the business logic simple!
-* It must be stateless!
+* Keep the business logic **simple**!
+* It must be **stateless**!
+* **Docker** is (a) present.
 
 ### Current architecture
 <center>
