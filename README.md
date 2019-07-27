@@ -9,6 +9,7 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
 [![License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
+[![Repo size](https://img.shields.io/github/repo-size/freaker2k7/dockerserver)](https://github.com/freaker2k7/dockerserver)
 
 
 <center>
@@ -348,6 +349,8 @@ And/or
 
 
 ## Changelog
+
+1.7.2 - Updated docker-cli-js's lodash.
 
 1.7.1 - New bin file ./bin.js
 
