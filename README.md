@@ -13,7 +13,7 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 
 <center>
   <a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
-    <img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;" style="max-width: 100%; border: 0;">
+    <img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;" style="max-width: 100%; border: 0; box-shadow: none;">
   </a>
 </center>
 
@@ -40,7 +40,7 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 
 ### Current architecture
 <center>
-  <img src="https://i.imgur.com/7cS4vWj.png" alt="How things work today" style="max-width: 100%; border: 0;" /><br>
+  <img src="https://i.imgur.com/7cS4vWj.png" alt="How things work today" style="max-width: 100%; border: 0; box-shadow: none;" /><br>
   <sub style="font-style: italic;">The cluster diagram demonstrates a PUT request.</sub>
 </center>
 
