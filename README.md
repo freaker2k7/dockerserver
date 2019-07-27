@@ -1,16 +1,4 @@
-<style type="text/css">
-	table {
-		table-layout: fixed;
-		width: 100%;
-	}
-	img {
-		max-width: 90%;
-		border: 0;
-	}
-	i {
-		font-style: italic;
-	}
-</style>
+<style type="text/css">table {table-layout: fixed;width: 100%;}</style>
 
 # DockerServer
 Super lightweight & simple RESTFul stateless server for running [docker](https://docker.com/ "docker") containers on a remote machine(s) in a secure way.
@@ -21,11 +9,12 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
 [![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 <center>
 	<a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
-		<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;">
+		<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;" style="max-width: 100%; border: 0;">
 	</a>
 </center>
 
@@ -52,10 +41,8 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 
 ### Current architecture
 <center>
-	<img alt="How things work today" src="https://i.imgur.com/7cS4vWj.png" /><br>
-	<sub>
-		<i>The cluster diagram demonstrates a PUT request.</i>
-	</sub>
+	<img src="https://i.imgur.com/7cS4vWj.png" alt="How things work today" style="max-width: 100%; border: 0;" /><br>
+	<sub style="font-style: italic;">The cluster diagram demonstrates a PUT request.</sub>
 </center>
 
 
