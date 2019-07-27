@@ -263,13 +263,13 @@ When sending the PUT request, the following parameters are supported:
   </tr>
   <tr>
     <td>remove</td>
-    <td>Flag to remove the container when it finishes `--rm`</td>
+    <td>Flag to remove the container when it finishes <code>--rm</code></td>
     <td>false</td>
     <td><code>--rm</code></td>
   </tr>
   <tr>
     <td>detach</td>
-    <td>Flag to detach the container `-d`</td>
+    <td>Flag to detach the container <code>-d</code></td>
     <td>false)</td>
     <td><code>-d</code></td>
   </tr>
