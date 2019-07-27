@@ -3,12 +3,12 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 
 [![npm version](https://badge.fury.io/js/docker-server.svg)](https://badge.fury.io/js/docker-server)
 [![npm downloads](https://img.shields.io/npm/dm/docker-server.svg)](https://www.npmjs.com/package/docker-server)
+[![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
-[![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
-[![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 
 
 <center>
