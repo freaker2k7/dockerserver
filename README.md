@@ -109,7 +109,7 @@ Note: `/tmp/docker-server` is the default folder so you can easily and safely ru
 
 Now, you can do "remote" docker operation using simple HTTP requests:
 
-<table style="table-layout: fixed; width: 100%;">
+<table style="table-layout: fixed; width: 100%; word-break: break-word;">
   <tr>
     <th>HTTP Method</th>
     <th>Endpoint</th>
@@ -152,7 +152,7 @@ Now, you can do "remote" docker operation using simple HTTP requests:
 #### Environment
 You can set the following environment variables to configure DockerServer:
 
-<table style="table-layout: fixed; width: 100%;">
+<table style="table-layout: fixed; width: 100%; word-break: break-word;">
   <tr>
     <th>Environment Var.</th>
     <th>Desc.</th>
@@ -173,7 +173,7 @@ You can set the following environment variables to configure DockerServer:
 #### Parameters
 Also, you can start DockerServerwith these parameters:
 
-<table style="table-layout: fixed; width: 100%;">
+<table style="table-layout: fixed; width: 100%; word-break: break-word;">
   <tr>
     <th>Param</th>
     <th>Desc.</th>
@@ -240,7 +240,7 @@ Also, you can start DockerServerwith these parameters:
 #### PUT Data
 When sending the PUT request, the following parameters are supported:
 
-<table style="table-layout: fixed; width: 100%;">
+<table style="table-layout: fixed; width: 100%; word-break: break-word;">
   <tr>
     <th>Param</th>
     <th>Desc.</th>
@@ -294,7 +294,7 @@ When sending the PUT request, the following parameters are supported:
 #### POST Data
 When sending the POST request, the following parameters are supported:
 
-<table style="table-layout: fixed; width: 100%;">
+<table style="table-layout: fixed; width: 100%; word-break: break-word;">
   <tr>
     <th>Param</th>
     <th>Desc.</th>
