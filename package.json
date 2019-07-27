@@ -44,6 +44,7 @@
 		"LICENSE",
 		"README.md",
 		"index.js",
+		"bin.js",
 		"pm2.config.js",
 		"lib/"
 	]
