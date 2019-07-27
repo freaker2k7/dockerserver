@@ -1,5 +1,3 @@
-<style type="text/css">table {table-layout: fixed;width: 100%;}</style>
-
 # DockerServer
 Super lightweight & simple RESTFul stateless server for running [docker](https://docker.com/ "docker") containers on a remote machine(s) in a secure way.
 
@@ -13,9 +11,9 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 
 
 <center>
-	<a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
-		<img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;" style="max-width: 100%; border: 0;">
-	</a>
+  <a href="https://dockerserver.io/" title="DockerServer Logo" target="_blank">
+    <img src="https://i.imgur.com/14Cypln.png" alt="DockerServer Logo" title="DockerServer Logo" style="box-shadow: none;" style="max-width: 100%; border: 0;">
+  </a>
 </center>
 
 ## Install
@@ -41,8 +39,8 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 
 ### Current architecture
 <center>
-	<img src="https://i.imgur.com/7cS4vWj.png" alt="How things work today" style="max-width: 100%; border: 0;" /><br>
-	<sub style="font-style: italic;">The cluster diagram demonstrates a PUT request.</sub>
+  <img src="https://i.imgur.com/7cS4vWj.png" alt="How things work today" style="max-width: 100%; border: 0;" /><br>
+  <sub style="font-style: italic;">The cluster diagram demonstrates a PUT request.</sub>
 </center>
 
 
@@ -111,64 +109,217 @@ Note: `/tmp/docker-server` is the default folder so you can easily and safely ru
 
 Now, you can do "remote" docker operation using simple HTTP requests:
 
-| HTTP Method | Endpoint | Desc. | Docker cmd |
-|---|---|---|---|
-| GET | / | List all the containers | docker ps -a |
-| GET | /:id | Show the logs of a specific container | docker logs :id |
-| PUT | / | Run a container | docker run... |
-| POST | /:id | Execute a command in a container | docker exec... |
-| DELETE | /:id | Delete a container with such a name or an ID | docker rm -f :id |
+<table style="table-layout: fixed; width: 100%;">
+  <tr>
+    <th>HTTP Method</th>
+    <th>Endpoint</th>
+    <th>Desc.</th>
+    <th>Docker cmd</th>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/</td>
+    <td>List all the containers</td>
+    <td>docker ps -a</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/:id</td>
+    <td>Show the logs of a specific container</td>
+    <td>docker logs :id</td>
+  </tr>
+  <tr>
+    <td>PUT</td>
+    <td>/</td>
+    <td>Run a container</td>
+    <td>docker run...</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/:id</td>
+    <td>Execute a command in a container</td>
+    <td>docker exec...</td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td>/:id</td>
+    <td>Delete a container with such a name or an ID</td>
+    <td>docker rm -f :id</td>
+  </tr>
+</table>
 
 ### Options
 #### Environment
 You can set the following environment variables to configure DockerServer:
 
-| Environment Var. | Desc. | Default |
-|---|---|---|
-| `DS_PORT` | The port on which the DockerServer is running | 1717 |
-| `DS_TOKEN` | The secret token for the authorization | xxxxxx |
-
-
+<table style="table-layout: fixed; width: 100%;">
+  <tr>
+    <th>Environment Var.</th>
+    <th>Desc.</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><code>DS_PORT</code></td>
+    <td>The port on which the DockerServer is running</td>
+    <td>1717</td>
+  </tr>
+  <tr>
+    <td><code>DS_TOKEN</code></td>
+    <td>The secret token for the authorization</td>
+    <td>xxxxxx</td>
+  </tr>
+</table>
 
 #### Parameters
 Also, you can start DockerServerwith these parameters:
 
-| Param | Desc. | Default |
-|---|---|---|
-| `--port [num]` | The port on which the DockerServer is running | 1717 |
-| `--token [string]` | The secret token for the authorization | xxxxxx |
-| `--low_burst [num]` | Max number of requests per minute for Low burst. | 60 |
-| `--mid_burst [num]` | Max number of requests per minute for Mid burst. | 180 |
-| `--high_burst [num]` | Max number of requests per minute for High burst. | 300 |
-| `--https` | Enable **HTTPS** mode.<br>For this you must have the following files:<br>&nbsp;&nbsp;&nbsp;&nbsp;a. /certs/cert.pem<br>&nbsp;&nbsp;&nbsp;&nbsp;b. /certs/privkey.pem<br>&nbsp;&nbsp;&nbsp;&nbsp;c. /certs/chain.pem (optional, to support self-signed certs) | false |
-| `--cluster` | Enable **Cluster** mode. | false |
-| `--folder` | Shared folder between all docker-servers. (Used only in cluster mode) | /tmp/docker-server |
-| `--help` | Show help |  |
-| `--version` | Show current version | &nbsp; |
-
+<table style="table-layout: fixed; width: 100%;">
+  <tr>
+    <th>Param</th>
+    <th>Desc.</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><code>--port [num]</code></td>
+    <td>The port on which the DockerServer is running</td>
+    <td>1717</td>
+  </tr>
+  <tr>
+    <td><code>--token [string]</code></td>
+    <td>The secret token for the authorization</td>
+    <td>xxxxxx</td>
+  </tr>
+  <tr>
+    <td><code>--low_burst [num]</code></td>
+    <td>Max number of requests per minute for Low burst.</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td><code>--mid_burst [num]</code></td>
+    <td>Max number of requests per minute for Mid burst.</td>
+    <td>180</td>
+  </tr>
+  <tr>
+    <td><code>--high_burst [num]</code></td>
+    <td>Max number of requests per minute for High burst.</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td><code>--https</code></td>
+    <td>
+      Enable <b>HTTPS</b> mode.<br>
+      For this you must have the following files:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;a. /certs/cert.pem<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;b. /certs/privkey.pem<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;c. /certs/chain.pem (optional, to support self-signed certs)
+    </td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td><code>--cluster</code></td>
+    <td>Enable <b>Cluster</b> mode.</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td><code>--folder</code></td>
+    <td>Shared folder between all docker-servers. (Used only in cluster mode)</td>
+    <td>/tmp/docker-server</td>
+  </tr>
+  <tr>
+    <td><code>--help</code></td>
+    <td>Show he</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><code>--version</code></td>
+    <td>Show current version </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 
 #### PUT Data
 When sending the PUT request, the following parameters are supported:
 
-| Param | Desc. | Default | Docker cmd |
-|---|---|---|---|
-| image | The image for the run. (**required**) | null |  |
-| name | The name of the container. | uuid4() | --name |
-| remove | Flag to remove the container when it finishes `--rm` | false) | --rm |
-| detach | Flag to detach the container `-d` | false) | -d |
-| ports | **Map** of ports to publish. | null | -p |
-| volumes | **Map** of volumes to mount. | null | -v |
-| data | CMD to run inside the container. | null | &nbsp; |
-
+<table style="table-layout: fixed; width: 100%;">
+  <tr>
+    <th>Param</th>
+    <th>Desc.</th>
+    <th>Default</th>
+    <th>Docker cmd</th>
+  </tr>
+  <tr>
+    <td>image</td>
+    <td>The image for the run. (<b>required</b>)</td>
+    <td>null</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>The name of the container.</td>
+    <td>uuid4()</td>
+    <td><code>--name</code></td>
+  </tr>
+  <tr>
+    <td>remove</td>
+    <td>Flag to remove the container when it finishes `--rm`</td>
+    <td>false</td>
+    <td><code>--rm</code></td>
+  </tr>
+  <tr>
+    <td>detach</td>
+    <td>Flag to detach the container `-d`</td>
+    <td>false)</td>
+    <td><code>-d</code></td>
+  </tr>
+  <tr>
+    <td>ports</td>
+    <td><b>Map</b> of ports to publish.</td>
+    <td>null</td>
+    <td><code>-p</code></td>
+  </tr>
+  <tr>
+    <td>volumes</td>
+    <td><b>Map</b> of volumes to mount.</td>
+    <td>null</td>
+    <td><code>-v</code></td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>CMD to run inside the container.</td>
+    <td>null</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 
 #### POST Data
 When sending the POST request, the following parameters are supported:
 
-| Param | Desc. | Default | Docker CMD |
-|---|---|---|---|
-| data | CMD to run inside the container. | null |  |
-| tty | Flag to enable TTY mode | false | -t |
-| interactive | Flag to enable interactive mode | false | -i |
+<table style="table-layout: fixed; width: 100%;">
+  <tr>
+    <th>Param</th>
+    <th>Desc.</th>
+    <th>Default</th>
+    <th>Docker cmd</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>CMD to run inside the container</td>
+    <td>null</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>tty</td>
+    <td>Flag to enable TTY mode</td>
+    <td>false</td>
+    <td><code>-t</code></td>
+  </tr>
+  <tr>
+    <td>interactive</td>
+    <td>Flag to enable interactive mode</td>
+    <td>false</td>
+    <td><code>-i</code></td>
+  </tr>
+</table>
 
 ### Examples
 NOTE: In the examples I assumed you're using the default port.
