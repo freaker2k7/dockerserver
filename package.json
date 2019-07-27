@@ -1,8 +1,8 @@
 {
 	"name": "docker-server",
 	"author": "Evgeny Kolyakov <thenetfreaker@gmail.com>",
-	"description": "DockerServer - Super lightweight & simple REST server for running docker containers on a remote machine.",
-	"version": "1.5.8",
+	"description": "DockerServer - Super lightweight & simple RESTFul stateless server for running docker containers on a remote machine(s) in a secure way",
+	"version": "1.5.9",
 	"homepage": "https://dockerserver.io",
 	"repository": "freaker2k7/dockerserver",
 	"license": "Apache-2.0",
@@ -22,7 +22,8 @@
 	},
 	"scripts": {
 		"start": "node ./index.js",
-		"test": "node ./test/basic.js"
+		"test": "node ./test/basic.js",
+		"prepublish": "if [[ ! -z Dockerfile ]]; then cat Dockerfile | sed -E 's/@[0-9]+[.][0-9]+[.][0-9]+/@'$(cat package.json | grep version | grep -oE '[0-9]+[.][0-9]+[.][0-9]+')'/g' > Dockerfile; fi"
 	},
 	"dependencies": {
 		"docker-cli-js": "^2.5.2",
@@ -31,7 +32,6 @@
 		"ip": "^1.1.5",
 		"lodash": "^4.17.15",
 		"ping": "^0.2.2",
-		"redis": "^2.8.0",
 		"request": "^2.88.0",
 		"systeminformation": "^4.14.4",
 		"uuid": "^3.3.2",
