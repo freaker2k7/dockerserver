@@ -270,7 +270,7 @@ When sending the PUT request, the following parameters are supported:
   <tr>
     <td>detach</td>
     <td>Flag to detach the container <code>-d</code></td>
-    <td>false)</td>
+    <td>false</td>
     <td><code>-d</code></td>
   </tr>
   <tr>
