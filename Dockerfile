@@ -1,6 +1,6 @@
 FROM node:12
 
 RUN curl -L https://get.docker.com | sh -
-RUN npm i -g docker-server@1.5.8
+RUN npm i -g docker-server@1.5.9
 
 CMD ["docker-server"]
