@@ -1,3 +1,3 @@
 const dokcer_server = require('../index.js');
 
-process.exit(0);
+dokcer_server._server.stop();

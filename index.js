@@ -49,8 +49,9 @@ app.post('/:id', low_burst, docker.exec);
 app.delete('/:id', mid_burst, docker.rm);
 
 // Main listener
-network.protocol(app, args.https).listen(args.port);
+var server = network.protocol(app, args.https);
+server.listen(args.port);
 console.log('Serving on ' + network.get_protocol() + '0.0.0.0:' + args.port);
 
 
-module.exports = Object.assign(docker, network, {'_app': app});
+module.exports = Object.assign(docker, network, {'_app': app, '_server': server});
