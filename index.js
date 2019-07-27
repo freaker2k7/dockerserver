@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const yargs = require('yargs');
 const express = require('express');
 const throttle = require('express-rate-limit');
