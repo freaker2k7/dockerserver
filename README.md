@@ -352,6 +352,8 @@ And/or
 
 ## Changelog
 
+1.7.8 - Fixed bin
+
 1.7.7 - Renamed npm-shrinkwrap.json to package-lock.json and added it to git.
 
 [See full changelog](https://github.com/freaker2k7/dockerserver/blob/master/CHANGELOG.md)
