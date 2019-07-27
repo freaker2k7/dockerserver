@@ -351,6 +351,8 @@ And/or
 
 ## Changelog
 
+1.7.5 - Added npm-shrinkwrap.json to remove lodash's (4.17.11 => 4.17.15) vulnerability from docker-cli-js.
+
 1.7.2 - Updated docker-cli-js's lodash.
 
 1.7.1 - New bin file ./bin.js
