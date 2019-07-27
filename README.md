@@ -12,6 +12,7 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 [![Repo size](https://img.shields.io/github/repo-size/freaker2k7/dockerserver)](https://github.com/freaker2k7/dockerserver)
 [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver)
+[![Beerpay](https://beerpay.io/freaker2k7/dockerserver/badge.svg?style=flat)](https://beerpay.io/freaker2k7/dockerserver)
 
 
 <center>
