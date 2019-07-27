@@ -348,6 +348,8 @@ And/or
 
 ## Changelog
 
+1.7.1 - New bin file ./bin.js
+
 1.5.9 - Cluster mode using json files in a **shared folder** instead of Redis.
 
 1.5.8 - **Cluster mode** support (Only some issues with POST to /:id) with **[Redis]("https://redis.io" "Redis")**.
