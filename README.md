@@ -147,9 +147,10 @@ Now, you can do "remote" docker operation using simple HTTP requests:
     <td>docker rm -f :id</td>
   </tr>
 </table>
+<br>
 
-### Options
-#### Environment
+## Options
+### Environment
 You can set the following environment variables to configure DockerServer:
 
 <table style="table-layout: fixed; width: 100%; word-break: break-word;">
@@ -170,7 +171,7 @@ You can set the following environment variables to configure DockerServer:
   </tr>
 </table>
 
-#### Parameters
+### Parameters
 Also, you can start DockerServerwith these parameters:
 
 <table style="table-layout: fixed; width: 100%; word-break: break-word;">
@@ -237,7 +238,7 @@ Also, you can start DockerServerwith these parameters:
   </tr>
 </table>
 
-#### PUT Data
+### PUT Data
 When sending the PUT request, the following parameters are supported:
 
 <table style="table-layout: fixed; width: 100%; word-break: break-word;">
@@ -291,7 +292,7 @@ When sending the PUT request, the following parameters are supported:
   </tr>
 </table>
 
-#### POST Data
+### POST Data
 When sending the POST request, the following parameters are supported:
 
 <table style="table-layout: fixed; width: 100%; word-break: break-word;">
@@ -321,7 +322,7 @@ When sending the POST request, the following parameters are supported:
   </tr>
 </table>
 
-### Examples
+## Examples
 NOTE: In the examples I assumed you're using the default port.
 
 1. Get a list of all the containers:
