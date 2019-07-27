@@ -10,7 +10,7 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 [![Repo size](https://img.shields.io/github/repo-size/freaker2k7/dockerserver)](https://github.com/freaker2k7/dockerserver)
-[![Vulnerabilities count](https://img.shields.io/snyk/vulnerabilities/github/freaker2k7/dockerserver)](https://snyk.io/test/github/freaker2k7/dockerserver)
+<!-- [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver) -->
 
 
 <center>
@@ -350,6 +350,8 @@ And/or
 
 
 ## Changelog
+
+1.7.7 - Renamed npm-shrinkwrap.json to package-lock.json and added it to git.
 
 1.7.5 - Added npm-shrinkwrap.json to remove lodash's (4.17.11 => 4.17.15) vulnerability from docker-cli-js.
 
