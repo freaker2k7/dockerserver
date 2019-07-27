@@ -31,7 +31,7 @@ Or
 I needed to run a couple of containers on a remote machine and came to these conclusions:
 * Kubernetes is an overkill !
 * docker-machine is also complicated !
-* I just want to run a few containers...
+* I just want to run a few containers on a remote machine.
 
 ## Approach
 Built a small REST server with NodeJS, using the `express` and `docker-cli-js` packages as a base.
@@ -354,41 +354,7 @@ And/or
 
 1.7.7 - Renamed npm-shrinkwrap.json to package-lock.json and added it to git.
 
-1.7.5 - Added npm-shrinkwrap.json to remove lodash's (4.17.11 => 4.17.15) vulnerability from docker-cli-js.
-
-1.7.2 - Updated docker-cli-js's lodash.
-
-1.7.1 - New bin file ./bin.js
-
-1.5.9 - Cluster mode using json files in a **shared folder** instead of Redis.
-
-1.5.8 - **Cluster mode** support (Only some issues with POST to /:id) with **[Redis]("https://redis.io" "Redis")**.
-
-1.5.7 - Badges :)
-
-1.5.5 - Back to express-rate-limit && set min version to NodeJS 6.0.
-
-1.5.4 - Returning to express-throttle for compatibitily (testing).
-
-1.5.2 - Fixed typo in filename.
-
-1.5.1 - Added test for [AppVeyor](https://appveyor.com/ "AppVeyor").
-
-**1.5.0 - Stable HTTPS support.**
-
-1.4.4-1.4.9 - Fixed some typos.
-
-1.4.2 - Added HTTPS support & parametrized all env. variables.
-
-1.4.1 - Removed unused DS_CONTEXT env. variable & received JS code quality A+ score on [LGTM](https://lgtm.com "LGTM").
-
-1.2.9 - Fixed some typos.
-
-1.2.7 - Replaced express-throttle with express-rate-limit.
-
-1.2.5 - Stable, simple express server with express-throttle.
-
-**1.0 - Release, woohoo!!**
+[See full changelog](https://github.com/freaker2k7/dockerserver/blob/master/CHANGELOG.md)
 
 ## Roadmap
 * Queue (for heavy loads)
