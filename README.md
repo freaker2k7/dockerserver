@@ -13,6 +13,7 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver)
 [![Beerpay](https://beerpay.io/freaker2k7/dockerserver/badge.svg?style=flat)](https://beerpay.io/freaker2k7/dockerserver)
+[![Liberapay](http://img.shields.io/liberapay/receives/evgy.svg?logo=liberapay)](https://liberapay.com/evgy/)
 
 
 <center>
@@ -352,6 +353,8 @@ And/or
 
 
 ## Changelog
+
+1.7.9 - Added Liberapay badge.
 
 1.7.8 - Fixed bin
 
