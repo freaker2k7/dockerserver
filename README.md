@@ -2,15 +2,16 @@
 Super lightweight & simple RESTFul stateless server for running [docker](https://docker.com/ "docker") containers on a remote machine(s) in a secure way.
 
 [![npm version](https://badge.fury.io/js/docker-server.svg)](https://badge.fury.io/js/docker-server)
-[![npm downloads](https://img.shields.io/npm/dm/docker-server.svg)](https://www.npmjs.com/package/docker-server)
+[![node version](https://img.shields.io/node/v/docker-server)](https://www.npmjs.com/package/docker-server)
+[![npm downloads](https://img.shields.io/npm/dw/docker-server.svg)](https://www.npmjs.com/package/docker-server)
 [![Gitter](https://badges.gitter.im/freaker2k7-dockerserver/community.svg)](https://gitter.im/freaker2k7-dockerserver/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/freaker2k7/dockerserver.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/freaker2k7/dockerserver/context:javascript)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/freaker2k7/dockerserver/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/freaker2k7/dockerserver/?branch=master)
-[![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
 [![License](https://img.shields.io/badge/license-Apache-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 [![Repo size](https://img.shields.io/github/repo-size/freaker2k7/dockerserver)](https://github.com/freaker2k7/dockerserver)
+[![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
 [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver)
 [![Beerpay](https://beerpay.io/freaker2k7/dockerserver/badge.svg?style=flat)](https://beerpay.io/freaker2k7/dockerserver)
 [![Liberapay](http://img.shields.io/liberapay/receives/evgy.svg?logo=liberapay)](https://liberapay.com/evgy/)
