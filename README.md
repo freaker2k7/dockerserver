@@ -44,7 +44,7 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 
 ### Current architecture
 <center>
-  <img src="https://i.imgur.com/7cS4vWj.png" alt="How things work today" style="max-width: 100%; border: 0; box-shadow: none;" /><br>
+  <img src="https://i.imgur.com/1LqU37z.png" alt="How things work today" style="max-width: 100%; border: 0; box-shadow: none;" /><br>
   <sub style="font-style: italic;">The cluster diagram demonstrates a PUT request.</sub>
 </center>
 
