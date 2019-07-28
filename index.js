@@ -11,6 +11,7 @@ var args = yargs
 	.option('https', {describe: 'Flag to turn on the HTTPS mode.', type: 'boolean', default: false})
 	.option('cluster', {describe: 'Flag to turn on the Cluster mode.', type: 'boolean', default: false})
 	.option('folder', {describe: 'Shared folder between all docker-servers.', type: 'string', default: '/tmp/docker-server'})
+	.option('cache_interval', {describe: 'Milliseconds between reads (of all the machines).', type: 'number', default: 3000})
 	.help('help', 'Show help.\nFor more documentation see https://github.com/freaker2k7/dockerserver')
 	.argv;
 
@@ -51,7 +52,7 @@ app.delete('/:id', mid_burst, docker.rm);
 // Main listener
 var server = network.protocol(app, args.https);
 server.listen(args.port);
-console.log('Serving on ' + network.get_protocol() + '0.0.0.0:' + args.port);
+console.info('Serving on ' + network.get_protocol() + '0.0.0.0:' + args.port);
 
 
 module.exports = Object.assign(docker, network, {'_app': app, '_server': server});

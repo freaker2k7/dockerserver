@@ -235,6 +235,11 @@ Also, you can start DockerServerwith these parameters:
     <td>/tmp/docker-server</td>
   </tr>
   <tr>
+    <td><code>--cache_interval</code></td>
+    <td>Milliseconds between reads (of all the machines)</td>
+    <td>3000</td>
+  </tr>
+  <tr>
     <td><code>--help</code></td>
     <td>Show he</td>
     <td>&nbsp;</td>
@@ -356,9 +361,9 @@ And/or
 
 ## Changelog
 
-1.8.0 - **Stable Cluster** mode!
+1.8.1 - Cashed reading (in cluster mode) & fixed host issue in results (also in cluster mode).
 
-1.7.9 - Added Liberapay badge.
+1.8.0 - **Stable Cluster mode!**
 
 [See full changelog](https://github.com/freaker2k7/dockerserver/blob/master/CHANGELOG.md)
 
