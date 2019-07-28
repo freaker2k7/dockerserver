@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.4] - 28/07/2019
+Edited some docs.
+
+## [1.8.2] - 28/07/2019
+Added logger.
+
 ## [1.8.1] - 28/07/2019
 Cashed reading (in cluster mode) & fixed host issue in results (also in cluster mode).
 

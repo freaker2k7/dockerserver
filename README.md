@@ -230,14 +230,29 @@ Also, you can start DockerServerwith these parameters:
     <td>false</td>
   </tr>
   <tr>
-    <td><code>--folder</code></td>
+    <td><code>--folder [path]</code></td>
     <td>Shared folder between all docker-servers. (Used only in cluster mode)</td>
     <td>/tmp/docker-server</td>
   </tr>
   <tr>
-    <td><code>--cache_interval</code></td>
+    <td><code>--cache_interval [num]</code></td>
     <td>Milliseconds between reads (of all the machines)</td>
     <td>3000</td>
+  </tr>
+  <tr>
+    <td><code>--log_lovel [option]</code></td>
+    <td>Log level [trace|debug|info|warn|error|fatal]</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td><code>--log_expiry [num]</code></td>
+    <td>Time for a log to live in days.</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td><code>--log_max_size [num]</code></td>
+    <td>Max log size in MB</td>
+    <td>25</td>
   </tr>
   <tr>
     <td><code>--help</code></td>
@@ -360,6 +375,10 @@ And/or
 
 
 ## Changelog
+
+1.8.4 - Edited some docs.
+
+1.8.2 - Added logger.
 
 1.8.1 - Cashed reading (in cluster mode) & fixed host issue in results (also in cluster mode).
 

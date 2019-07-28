@@ -12,11 +12,16 @@ var args = yargs
 	.option('cluster', {describe: 'Flag to turn on the Cluster mode.', type: 'boolean', default: false})
 	.option('folder', {describe: 'Shared folder between all docker-servers.', type: 'string', default: '/tmp/docker-server'})
 	.option('cache_interval', {describe: 'Milliseconds between reads (of all the machines).', type: 'number', default: 3000})
+	.option('log_level', {describe: 'Log level [trace|debug|info|warn|error|fatal]', type: 'string', default: 'info'})
+	.option('log_expiry', {describe: 'Time for a log to live in days.', type: 'number', default: 14})
+	.option('log_max_size', {describe: 'Max log size in MB.', type: 'number', default: 25})
 	.help('help', 'Show help.\nFor more documentation see https://github.com/freaker2k7/dockerserver')
 	.argv;
 
-const docker = require('./lib/docker.js');
-const network = require('./lib/network.js')(args);
+var log = require('./lib/logger.js')(args);
+
+const docker = require('./lib/docker.js')(log);
+const network = require('./lib/network.js')(log, args);
 
 var app = express();
 
@@ -52,7 +57,7 @@ app.delete('/:id', mid_burst, docker.rm);
 // Main listener
 var server = network.protocol(app, args.https);
 server.listen(args.port);
-console.info('Serving on ' + network.get_protocol() + '0.0.0.0:' + args.port);
+log.info('Serving on ' + network.get_protocol() + '0.0.0.0:' + args.port);
 
 
 module.exports = Object.assign(docker, network, {'_app': app, '_server': server});
