@@ -368,3 +368,11 @@ And/or
 
 ## License
 APACHE-2.0 (see the LICENSE files in the repository).
+
+## Donate
+Running dockers is free, but **beer** is always welcome <a href="https://beerpay.io/freaker2k7/dockerserver">
+  <img style="display: inline-block; vertical-align: text-bottom;" alt="Beerpay" src="https://beerpay.io/freaker2k7/dockerserver/badge.svg?style=beer">
+</a>
+or directly donate to our cause <a href="https://liberapay.com/evgy/donate">
+  <img style="display: inline-block; vertical-align: text-bottom;" alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg">
+</a>
