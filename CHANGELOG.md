@@ -1,7 +1,13 @@
 # Changelog
 
+## [1.8.0] - 28/7/2019
+**Stable Cluster mode!**
+
+## [1.7.9] - 28/7/2019
+Added Liberapay badge.
+
 ## [1.7.8] - 27/7/2019
-Fixed bin
+Fixed test
 
 ## [1.7.7] - 27/7/2019
 Renamed npm-shrinkwrap.json to package-lock.json and added it to git.

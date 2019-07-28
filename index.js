@@ -33,7 +33,7 @@ app.use(network.check(token));
 
 // Body parsers
 app.use(express.json({limit: '10kb'}));
-app.use(express.urlencoded({extended: false, limit: '10kb'}));
+app.use(express.urlencoded({extended: true, limit: '10kb'}));
 
 app.use(network.balance(args.port));
 
