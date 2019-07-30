@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.5] - 30/07/2019
+Added **pull** option as a HEAD request && **S3 support** for fully distributed clusters.
+
 ## [1.8.4] - 28/07/2019
 Edited some docs.
 

@@ -12,9 +12,10 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 [![Repo size](https://img.shields.io/github/repo-size/freaker2k7/dockerserver)](https://github.com/freaker2k7/dockerserver)
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
-[![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver)
+<!-- [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver) -->
 [![Beerpay](https://beerpay.io/freaker2k7/dockerserver/badge.svg?style=flat)](https://beerpay.io/freaker2k7/dockerserver)
 [![Liberapay](http://img.shields.io/liberapay/receives/evgy.svg?logo=liberapay)](https://liberapay.com/evgy/)
+[![GitHub stars](https://img.shields.io/github/stars/freaker2k7/dockerserver.svg?style=social&label=Stars)](https://github.com/freaker2k7/dockerserver/stargazers/)
 
 
 <center>
@@ -125,6 +126,12 @@ Now, you can do "remote" docker operation using simple HTTP requests:
     <th>Docker cmd</th>
   </tr>
   <tr>
+    <td>HEAD</td>
+    <td>/:id*</td>
+    <td>Pull an image</td>
+    <td>docker pull :id</td>
+  </tr>
+  <tr>
     <td>GET</td>
     <td>/</td>
     <td>List all the containers</td>
@@ -230,14 +237,27 @@ Also, you can start DockerServerwith these parameters:
     <td>false</td>
   </tr>
   <tr>
+    <td><code>--refresh_rate [num]</code></td>
+    <td>Milliseconds between writes to the shared memory</td>
+    <td>30000</td>
+  </tr>
+  <tr>
+    <td><code>--cache_interval [num]</code></td>
+    <td>Milliseconds to cache reads of all the machines</td>
+    <td>3000</td>
+  </tr>
+  <tr>
     <td><code>--folder [path]</code></td>
     <td>Shared folder between all docker-servers. (Used only in cluster mode)</td>
     <td>/tmp/docker-server</td>
   </tr>
   <tr>
-    <td><code>--cache_interval [num]</code></td>
-    <td>Milliseconds between reads (of all the machines)</td>
-    <td>3000</td>
+    <td><code>--s3 [bucket-name]</code></td>
+    <td>
+      S3 bucket name, use with high refresh_rate.<br>
+      If set, the `--folder` param. becomes the Key.
+    </td>
+    <td>null</td>
   </tr>
   <tr>
     <td><code>--log_lovel [option]</code></td>
@@ -376,19 +396,16 @@ And/or
 
 ## Changelog
 
+1.8.5 - Added **docker pull** option as a HEAD request && **S3 support** for fully distributed clusters.
+
 1.8.4 - Edited some docs.
-
-1.8.2 - Added logger.
-
-1.8.1 - Cashed reading (in cluster mode) & fixed host issue in results (also in cluster mode).
-
-1.8.0 - **Stable Cluster mode!**
 
 [See full changelog](https://github.com/freaker2k7/dockerserver/blob/master/CHANGELOG.md)
 
 ## Roadmap
 * Queue (for heavy loads)
 * Autoscaling
+* S3 support (wrap fs)
 
 ## License
 APACHE-2.0 (see the LICENSE files in the repository).
