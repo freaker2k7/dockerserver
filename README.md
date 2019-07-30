@@ -351,12 +351,6 @@ When sending the POST request, the following parameters are supported:
     <th>Docker cmd</th>
   </tr>
   <tr>
-    <td>data</td>
-    <td>CMD to run inside the container</td>
-    <td>null</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
     <td>tty</td>
     <td>Flag to enable TTY mode</td>
     <td>false</td>
@@ -367,6 +361,12 @@ When sending the POST request, the following parameters are supported:
     <td>Flag to enable interactive mode</td>
     <td>false</td>
     <td><code>-i</code></td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>CMD to run inside the container</td>
+    <td>null</td>
+    <td>&nbsp;</td>
   </tr>
 </table>
 
