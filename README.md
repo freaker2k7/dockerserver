@@ -12,10 +12,10 @@ Super lightweight & simple RESTFul stateless server for running [docker](https:/
 [![Bungle size](https://img.shields.io/bundlephobia/minzip/docker-server)](https://bundlephobia.com/result?p=docker-server)
 [![Repo size](https://img.shields.io/github/repo-size/freaker2k7/dockerserver)](https://github.com/freaker2k7/dockerserver)
 [![Build status](https://ci.appveyor.com/api/projects/status/rwbo4jvqp4032boj/branch/master?svg=true)](https://ci.appveyor.com/project/freaker2k7/dockerserver/branch/master)
-<!-- [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver) -->
 [![Beerpay](https://beerpay.io/freaker2k7/dockerserver/badge.svg?style=flat)](https://beerpay.io/freaker2k7/dockerserver)
 [![Liberapay](http://img.shields.io/liberapay/receives/evgy.svg?logo=liberapay)](https://liberapay.com/evgy/)
 [![GitHub stars](https://img.shields.io/github/stars/freaker2k7/dockerserver.svg?style=social&label=Stars)](https://github.com/freaker2k7/dockerserver/stargazers/)
+<!-- [![Known Vulnerabilities](https://snyk.io//test/github/freaker2k7/dockerserver/badge.svg?targetFile=package.json)](https://snyk.io//test/github/freaker2k7/dockerserver) -->
 
 
 <center>
