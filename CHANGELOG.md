@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.8] - 30/07/2019
+Fixed volumes option (because of deprecated contect var)
+
 ## [1.8.5] - 30/07/2019
 Added **pull** option as a HEAD request && **S3 support** for fully distributed clusters.
 
