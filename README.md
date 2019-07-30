@@ -405,7 +405,6 @@ And/or
 ## Roadmap
 * Queue (for heavy loads)
 * Autoscaling
-* S3 support (wrap fs)
 
 ## License
 APACHE-2.0 (see the LICENSE files in the repository).
