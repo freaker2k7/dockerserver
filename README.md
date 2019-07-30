@@ -396,11 +396,9 @@ And/or
 
 ## Changelog
 
-1.8.8 - Fixed volumes option (because of deprecated contect var).
+1.8.8 - Fixed volumes option (because of deprecated context var).
 
 1.8.5 - Added **docker pull** option as a HEAD request && **S3 support** for fully distributed clusters.
-
-1.8.4 - Edited some docs.
 
 [See full changelog](https://github.com/freaker2k7/dockerserver/blob/master/CHANGELOG.md)
 
