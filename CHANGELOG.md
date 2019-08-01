@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.9.0] - 01/08/2019
+Added optional **[Redis](https://redis.io) support** for big clusters (recommended for clusters with more than 50 workers/hosts).
+
 ## [1.8.9] - 01/08/2019
 Fixed CVE issue with docker-cli-js v2.5.2 ==> v2.5.3 & removed package-lock.json
 

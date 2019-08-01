@@ -252,6 +252,21 @@ Also, you can start DockerServerwith these parameters:
     <td>/tmp/docker-server</td>
   </tr>
   <tr>
+    <td><code>--redis [hostname]</code></td>
+    <td>
+      Shared redis server hostname.<br>
+      If set, the `--folder` param. becomes the key prefix (default: "DSC:")
+    </td>
+    <td>null</td>
+  </tr>
+  <tr>
+    <td><code>--port [num]</code></td>
+    <td>
+      Shared server port number.<br>
+    </td>
+    <td>6379</td>
+  </tr>
+  <tr>
     <td><code>--s3 [bucket-name]</code></td>
     <td>
       S3 bucket name, use with high refresh_rate.<br>
@@ -396,11 +411,9 @@ And/or
 
 ## Changelog
 
+1.9.0 - Added optional **[Redis](https://redis.io) support** for big clusters (recommended for clusters with more than 50 workers/hosts).
+
 1.8.9 - Fixed CVE issue with docker-cli-js v2.5.2 ==> v2.5.3 & removed package-lock.json
-
-1.8.8 - Fixed volumes option (because of deprecated context var).
-
-1.8.5 - Added **docker pull** option as a HEAD request && **S3 support** for fully distributed clusters.
 
 [See full changelog](https://github.com/freaker2k7/dockerserver/blob/master/CHANGELOG.md)
 
