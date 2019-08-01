@@ -396,6 +396,8 @@ And/or
 
 ## Changelog
 
+1.8.9 - Fixed CVE issue with docker-cli-js v2.5.2 ==> v2.5.3 & removed package-lock.json
+
 1.8.8 - Fixed volumes option (because of deprecated context var).
 
 1.8.5 - Added **docker pull** option as a HEAD request && **S3 support** for fully distributed clusters.

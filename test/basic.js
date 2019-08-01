@@ -1,3 +1,3 @@
-const dokcer_server = require('../index.js');
+var dokcer_server = require('../index.js');
 
 dokcer_server._server.close();

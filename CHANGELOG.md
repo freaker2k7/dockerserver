@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.8.9] - 01/08/2019
+Fixed CVE issue with docker-cli-js v2.5.2 ==> v2.5.3 & removed package-lock.json
+
 ## [1.8.8] - 30/07/2019
 Fixed volumes option (because of deprecated context var)
 
