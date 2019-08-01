@@ -23,7 +23,8 @@ cache:
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
-  - ps: Install-Product node $env:nodejs_version
+  - cmd: powershell Install-Product node $env:nodejs_version
+  - sh: nvm install $nodejs_version
   # install modules
   - npm install
 
@@ -41,3 +42,4 @@ build: off
 matrix:
   allow_failures:
     - nodejs_version: "12.3"
+      image: Visual Studio 2017
