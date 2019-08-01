@@ -260,7 +260,7 @@ Also, you can start DockerServerwith these parameters:
     <td>null</td>
   </tr>
   <tr>
-    <td><code>--port [num]</code></td>
+    <td><code>--db_port [num]</code></td>
     <td>
       Shared server port number.<br>
     </td>
