@@ -48,7 +48,7 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 
 ### Current architecture
 <center>
-  <img src="https://i.imgur.com/1LqU37z.png" alt="How things work today" style="max-width: 100%; border: 0; box-shadow: none;" /><br>
+  <img src="https://i.imgur.com/aQsDFF3.png" alt="How things work today" style="max-width: 100%; border: 0; box-shadow: none;" /><br>
   <sub style="font-style: italic;">The cluster diagram demonstrates a PUT request.</sub>
 </center>
 
@@ -64,7 +64,7 @@ Built a small REST server with NodeJS, using the `express` and `docker-cli-js` p
 
   *1 - Requests comes to any free (according to the load balancer) node to answer.*
 
-  *2 - Get the most free (according to actual cpu-mem ratio) node (from the shared storage).*
+  *2 - Get the most free (according to actual cpu-mem ratio) node (from redis or the shared storage, possibly on S3).*
 
   *3 - Resend the current request to that node (or process if it's the current node) and return the answer.*
 
