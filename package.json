@@ -1,54 +1,58 @@
 {
-	"name": "docker-server",
-	"author": "Evgeny Kolyakov <thenetfreaker@gmail.com>",
-	"description": "DockerServer - Super lightweight & simple RESTFul stateless server for running docker containers on a remote machine(s) in a secure way",
-	"version": "1.9.0",
-	"homepage": "https://dockerserver.io",
-	"repository": "freaker2k7/dockerserver",
-	"license": "Apache-2.0",
-	"keywords": [
-		"docker",
-		"server",
-		"micro",
-		"service",
-		"rest",
-		"restful",
-		"http",
-		"pm2",
-		"api"
-	],
-	"bin": {
-		"docker-server": "./bin.js"
-	},
-	"scripts": {
-		"start": "node ./index.js",
-		"test": "node ./test/basic.js",
-		"prepublishOnly": "node ./scripts/dockerfile-version-verify.js"
-	},
-	"dependencies": {
-		"aws-sdk": "^2.502.0",
-		"docker-cli-js": "2.5.3",
-		"express": "^4.17.1",
-		"express-rate-limit": "^5.0.0",
-		"ip": "^1.1.5",
-		"ping": "^0.2.2",
-		"redis": "^2.8.0",
-		"request": "^2.88.0",
-		"systeminformation": "^4.14.4",
-		"uuid": "^3.3.2",
-		"winston": "^3.2.1",
-		"winston-daily-rotate-file": "^3.10.0",
-		"yargs": "^13.3.0"
-	},
-	"engines": {
-		"node": ">= 6.0"
-	},
-	"files": [
-		"LICENSE",
-		"README.md",
-		"index.js",
-		"bin.js",
-		"pm2.config.js",
-		"lib/"
-	]
+  "name": "docker-server",
+  "author": "Evgeny Kolyakov <thenetfreaker@gmail.com>",
+  "description": "DockerServer - Super lightweight & simple RESTFul stateless server for running docker containers on a remote machine(s) in a secure way",
+  "version": "1.9.0",
+  "homepage": "https://dockerserver.io",
+  "repository": "freaker2k7/dockerserver",
+  "license": "Apache-2.0",
+  "keywords": [
+    "docker",
+    "server",
+    "micro",
+    "service",
+    "rest",
+    "restful",
+    "http",
+    "pm2",
+    "api"
+  ],
+  "bin": {
+    "docker-server": "./bin.js"
+  },
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "node ./test/basic.js",
+    "prepublishOnly": "node ./scripts/dockerfile-version-verify.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.502.0",
+    "docker-cli-js": "2.5.3",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.0.0",
+    "ip": "^1.1.5",
+    "ping": "^0.2.2",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "systeminformation": "^4.14.4",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.10.0",
+    "yargs": "^13.3.0",
+    "snyk": "^1.316.1"
+  },
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "bin.js",
+    "pm2.config.js",
+    "lib/"
+  ],
+  "snyk": true
 }
