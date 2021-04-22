@@ -34,7 +34,7 @@
 		"ping": "^0.2.2",
 		"redis": "^2.8.0",
 		"request": "^2.88.0",
-		"systeminformation": "^5.3.4",
+		"systeminformation": "^5.6.4",
 		"uuid": "^3.3.2",
 		"winston": "^3.2.1",
 		"winston-daily-rotate-file": "^3.10.0",
